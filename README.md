@@ -21,6 +21,7 @@ If using no framework, it would be nice if you could format the output nicely, o
 You need to run these commands to install the testing libraries. (You'll need admin privledges, `sudo` on Linux)
 
     gem install rspec
+    gem install rantly
     gem install minitest
 
 ## Running
