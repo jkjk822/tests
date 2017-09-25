@@ -632,15 +632,15 @@ describe Triple do
     end
   end
 
-  describe '#zip' do
-    it 'zip two structure to an array of array' do
-      triple2 = Triple.new(1,2,3)
-      @triple = Triple.new(4,5,6)
-      expect(@triple.zip(triple2.value)).to eq [[4,1],[5,2],[6,3]]
-      arr = []
-      @triple.zip(triple2.value) {|x,y| arr << x-y}
-      triple3 = Triple.new(arr[0], arr[1], arr[2])
-      expect(triple3.value).to eq [3,3,3]
-    end
-  end
+  # describe '#zip' do
+  #   it 'zip two structure to an array of array' do
+  #     triple2 = Triple.new(1,2,3)
+  #     @triple = Triple.new(4,5,6)
+  #     expect(@triple.zip(triple2.value)).to eq [[4,1],[5,2],[6,3]]
+  #     arr = []
+  #     @triple.zip(triple2.value) {|x,y| arr << x-y}
+  #     triple3 = Triple.new(arr[0], arr[1], arr[2])
+  #     expect(triple3.value).to eq [3,3,3]
+  #   end
+  # end
 end
