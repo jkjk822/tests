@@ -3,7 +3,7 @@
 require 'minitest/autorun'
 
 # Unit Tests for Enumerable Class
-class ENewton4Tests < Minitest::Unit::TestCase
+class ENewton4Tests < Minitest::Test
 
     # Setup
     def setup

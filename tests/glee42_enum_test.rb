@@ -2,7 +2,7 @@
 
 require 'minitest/autorun'
 
-class TestEnum < MiniTest::Unit::TestCase
+class TestEnum < MiniTest::Test
 
 	def setup
 		@triple_int = Triple.new(1, 2, 3)
