@@ -1,4 +1,4 @@
-require_relative "../liu_enum/triple"
+#require_relative "../liu_enum/triple"
 #require "test/unit"
 require "minitest/autorun"
 
