@@ -7,7 +7,7 @@ class TestTriple < Minitest::Test
 
   def test_all?
     assert_equal(true, Triple.new("I","love","Lucinda").all?{|obj| obj.is_a?(String)} )
-    assert_equal(false, Triple.new("I","love","Lucinda").all?{|obj| obj.is_a?(Fixnum)} )
+    assert_equal(false, Triple.new("I","love","Lucinda").all?{|obj| obj.is_a?(Integer)} )
     assert_equal(true, Triple.new("I","love","Lucinda").all?)
     assert_equal(true, Triple.new("I","love","Lucinda").all?{|obj| obj.length >= 1} )
   end
@@ -15,7 +15,7 @@ class TestTriple < Minitest::Test
   def test_any?
     assert_equal(true, Triple.new("I","love","Lucinda").any?{|obj| obj.is_a?(String)} )
     assert_equal(true, Triple.new("I","love","Lucinda").any?{|obj| obj.length == 1} )
-    assert_equal(false, Triple.new("I","love","Lucinda").any?{|obj| obj.is_a?(Fixnum)} )
+    assert_equal(false, Triple.new("I","love","Lucinda").any?{|obj| obj.is_a?(Integer)} )
     assert_equal(false, Triple.new("I","love","Lucinda").any?{|obj| obj.length == 5} )
     assert_equal(true, Triple.new("I","love","Lucinda").any? )
   end
@@ -76,7 +76,7 @@ class TestTriple < Minitest::Test
     std = StringIO.new
     $stdout = std
 
-    assert_equal(nil,Triple.new("I","love","Lucinda").cycle(3){|e| p e})
+    assert_nil(Triple.new("I","love","Lucinda").cycle(3){|e| p e})
     assert_equal("\"I\"\n\"love\"\n\"Lucinda\"\n\"I\"\n\"love\"\n\"Lucinda\"\n\"I\"\n\"love\"\n\"Lucinda\"\n", $stdout.string)
   #  assert_equal(true,Triple.new("I","love","Lucinda").cycle(3).is_a?(Enumerator))
   end
@@ -84,8 +84,8 @@ class TestTriple < Minitest::Test
     def test_detect
       assert_equal("love",Triple.new("I","love","Lucinda").detect(ifnone=nil){|e| e.length == 4})
       assert_equal("I",Triple.new("I","love","Lucinda").detect(ifnone=nil){|e| e.length == 1})
-      assert_equal(nil,Triple.new("I","love","Lucinda").detect(ifnone=nil){|e| e.length == 3})
-      assert_equal(nil,Triple.new("I","love","Lucinda").detect{|e| e.length == 3})
+      assert_nil(Triple.new("I","love","Lucinda").detect(ifnone=nil){|e| e.length == 3})
+      assert_nil(Triple.new("I","love","Lucinda").detect{|e| e.length == 3})
   #    assert_equal(true,Triple.new("I","love","Lucinda").detect.is_a?(Enumerator))
     end
 
@@ -146,8 +146,8 @@ class TestTriple < Minitest::Test
     def test_find
       assert_equal("love",Triple.new("I","love","Lucinda").find(ifnone=nil){|e| e.length == 4})
       assert_equal("I",Triple.new("I","love","Lucinda").find(ifnone=nil){|e| e.length == 1})
-      assert_equal(nil,Triple.new("I","love","Lucinda").find(ifnone=nil){|e| e.length == 3})
-      assert_equal(nil,Triple.new("I","love","Lucinda").find{|e| e.length == 3})
+      assert_nil(Triple.new("I","love","Lucinda").find(ifnone=nil){|e| e.length == 3})
+      assert_nil(Triple.new("I","love","Lucinda").find{|e| e.length == 3})
     #  assert_equal(true,Triple.new("I","love","Lucinda").find.is_a?(Enumerator))
     end
 
@@ -164,7 +164,7 @@ class TestTriple < Minitest::Test
     def test_find_index
       assert_equal(1,Triple.new("I","love","Lucinda").find_index("love"))
       assert_equal(0,Triple.new("I","love","Lucinda").find_index("I"))
-      assert_equal(nil,Triple.new("I","love","Lucinda").find_index("yo"))
+      assert_nil(Triple.new("I","love","Lucinda").find_index("yo"))
       assert_equal(1,Triple.new("I","love","Lucinda").find_index{|e| e.length == 4})
     #  assert_equal(true,Triple.new("I","love","Lucinda").find_index.is_a?(Enumerator))
     end
@@ -172,7 +172,7 @@ class TestTriple < Minitest::Test
     def test_first
       assert_equal("I",Triple.new("I","love","Lucinda").first)
       assert_equal(["I","love"],Triple.new("I","love","Lucinda").first(2))
-      assert_equal(nil,[].first)
+      assert_nil([].first)
       assert_equal([],[].first(3))
     end
 
