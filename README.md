@@ -8,7 +8,7 @@ Please replace 'LastName' with 'NetId' in your filename.
 
 If using rspec, add `require 'rspec/autorun'` to your test file (see `tests/example_spec.rb`). **Make sure your filename ends in 'spec' or it will not be run correctly.**
 
-If using minitest, use `require 'minitest/autorun'` (see `tests/example_minitest.rb`). **Make sure your class has a unique name or it will not run** (such as `<NetId>Test`).
+If using minitest, use `require 'minitest/autorun'` (see `tests/example_minitest.rb`). **Make sure your class has a unique name or it will not run** (such as `<NetId>Test`). If extending `Minitest`, make sure you use `MiniTest::Test` instead of `MiniTest::Unit::TestCase`
 
 If using another (or no) testing framework, please make sure your file is runnable with `ruby filename` and then you can place it in the `tests` directory as normal.
 
