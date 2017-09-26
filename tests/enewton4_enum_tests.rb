@@ -122,12 +122,12 @@ class ENewton4Tests < Minitest::Test
         assert_equal 1, @norm_mix_enum.count { |a| a * 2 == "WorldWorld" }
     end
 
-    def test_cycle_success
-        # Test change to orig var
-        arr = @norm_int_enum.cycle(2)
+    # def test_cycle_success
+    #     # Test change to orig var
+    #     arr = @norm_int_enum.cycle(2)
 
-        assert_equal [1, 2, 3, 1, 2, 3], arr
-    end
+    #     assert_equal [1, 2, 3, 1, 2, 3], arr
+    # end
 
     def test_detect_success
         # Test Args
