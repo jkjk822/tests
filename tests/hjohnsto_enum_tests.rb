@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 
 
-class JohnstonEnumerableTests < Minitest::Unit::TestCase
+class JohnstonEnumerableTests < Minitest::Test
 
 	def setup
 		# Triple.new(1,2,3) = Triple.new(1,2,3)
@@ -56,7 +56,7 @@ class JohnstonEnumerableTests < Minitest::Unit::TestCase
 	#cycle
 	def test_cycle
 		sum = 0
-		assert_equal(nil,Triple.new(1,2,3).cycle(2){|i| sum+=i})
+		assert_nil(Triple.new(1,2,3).cycle(2){|i| sum+=i})
 		assert_equal(12,sum)
 	end
 
@@ -84,7 +84,7 @@ class JohnstonEnumerableTests < Minitest::Unit::TestCase
 	#each_cons
 	def test_each_cons
 		total = []
-		assert_equal(nil,Triple.new(1,2,3).each_cons(2){|i| total << i})
+		assert_nil(Triple.new(1,2,3).each_cons(2){|i| total << i})
 		assert_equal([[1,2],[2,3]],total)
 	end
 
@@ -98,7 +98,7 @@ class JohnstonEnumerableTests < Minitest::Unit::TestCase
 	#each_slice
 	def test_each_slice
 		total = []
-		assert_equal(nil,Triple.new(1,2,3).each_slice(2){|i| total << i})
+		assert_nil(Triple.new(1,2,3).each_slice(2){|i| total << i})
 		assert_equal([[1,2],[3]],total)
 	end
 
@@ -346,10 +346,10 @@ class JohnstonEnumerableTests < Minitest::Unit::TestCase
 	def test_zip
 		assert_equal([[1,3],[2,3],[3,7]],Triple.new(1,2,3).zip(Triple.new(3,3,7)))
 		assert_equal([[1,3,2],[2,3,4],[3,7,5]],Triple.new(1,2,3).zip(Triple.new(3,3,7), Triple.new(2,4,5)))
-		assert_equal(nil,Triple.new(1,2,3).zip{|i| i})
+		assert_nil(Triple.new(1,2,3).zip{|i| i})
 
 		c=[]
-		assert_equal(nil,Triple.new(1,2,3).zip(Triple.new(2,4,5)){ |x, y| c << x + y })
+		assert_nil(Triple.new(1,2,3).zip(Triple.new(2,4,5)){ |x, y| c << x + y })
 		assert_equal([3,6,8],c)
 	end
 
