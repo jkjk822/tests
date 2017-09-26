@@ -1,6 +1,5 @@
 require 'rspec/autorun'
 require 'rantly/rspec_extensions'
-require_relative '../Triple.rb'
 
 describe '#all?' do
   it 'return true if all three elements in t > 0' do
