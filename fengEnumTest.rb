@@ -1,5 +1,4 @@
 require 'minitest/autorun'
-require './triple.rb'
 
 # This is a test file for fengEnum.rb. It requires minitest installed.
 # The general test case using 4 different triples:
