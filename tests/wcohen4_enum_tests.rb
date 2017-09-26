@@ -111,13 +111,13 @@ describe Enumerable do
         end
     end
 
-    # each_with_index
-    describe "each_with_index" do
-        it "return iterator of items and indecies" do
-            result = @triple.each_with_index
-            result.to_a.must_equal [[4, 0], [2, 1], [3, 2]]
-        end
-    end
+    # # each_with_index
+    # describe "each_with_index" do
+    #     it "return iterator of items and indecies" do
+    #         result = @triple.each_with_index
+    #         result.to_a.must_equal [[4, 0], [2, 1], [3, 2]]
+    #     end
+    # end
 
     # each_with_object
     describe "each_with_object" do
@@ -550,13 +550,13 @@ describe Enumerable do
         end
     end
 
-    # to_h
-    describe "to_h" do
-        it "returns hash of elements with id" do
-            result = @triple.each_with_index.to_h
-            result.to_a.must_equal [[4, 0], [2, 1], [3, 2]]
-        end
-    end
+    # # to_h
+    # describe "to_h" do
+    #     it "returns hash of elements with id" do
+    #         result = @triple.each_with_index.to_h
+    #         result.to_a.must_equal [[4, 0], [2, 1], [3, 2]]
+    #     end
+    # end
 
     # uniq
     describe "uniq" do
