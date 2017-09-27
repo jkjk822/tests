@@ -2,10 +2,10 @@
 
 #require_relative "Liu_enum"
 #require_relative "Triple"
-require "test/unit"
+require "minitest/autorun"
 
 #include LiuEnumerable        
-    class Enum < Test::Unit::TestCase
+    class Enum < Minitest::Test
 
         def test_simple
 
@@ -380,5 +380,5 @@ require "test/unit"
             assert_equal([[nil, nil], [nil, nil], [nil, nil]], zz3)
 
     end
-#end
+end
 
