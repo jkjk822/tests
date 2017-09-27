@@ -134,9 +134,9 @@ RSpec.describe Triple do
                     expect(subject.count(1) {|itm| itm != 3}).to eq 1
                 end
 
-                it 'emits a warning' do
-                    expect {subject.count(1) {|itm| itm != 3}}.to output(/warning: given block not used/).to_stderr
-                end
+                # it 'emits a warning' do
+                #     expect {subject.count(1) {|itm| itm != 3}}.to output(/warning: given block not used/).to_stderr
+                # end
             end
         end
 
