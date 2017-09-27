@@ -61,8 +61,8 @@ require "minitest/autorun"
 
 
             #test cycle  
-            c = @items1.cycle(2) {|num| puts num}
-            assert_equal(nil, c)
+            c = @items1.cycle(2) {|num|  num}
+            assert_nil(c)
 
 
             #test detect
@@ -73,7 +73,7 @@ require "minitest/autorun"
             assert_equal("1", d2)
 
             d3 = @items3.detect {|num| num}
-            assert_equal(nil, d3)
+            assert_nil(d3)
 
 
             #test drop
@@ -96,25 +96,25 @@ require "minitest/autorun"
 
 
             #test each_cons
-            f1 = @items1.each_cons(3) {|num| puts num}
-            assert_equal(nil, f1)
+            f1 = @items1.each_cons(3) {|num|  num}
+            assert_nil(f1)
 
-            f2 = @items2.each_cons(3) {|num| puts num}
-            assert_equal(nil, f2)
+            f2 = @items2.each_cons(3) {|num|  num}
+            assert_nil(f2)
 
-            f3 = @items3.each_cons(3) {|num| puts num}
-            assert_equal(nil, f3)
+            f3 = @items3.each_cons(3) {|num|  num}
+            assert_nil(f3)
 
 
             #test each_slice
-            ff1 = @items1.each_slice(3) {|num| puts num}
-            assert_equal(nil, ff1)
+            ff1 = @items1.each_slice(3) {|num|  num}
+            assert_nil(ff1)
 
-            ff2 = @items2.each_slice(3) {|num| puts num}
-            assert_equal(nil, ff2)
+            ff2 = @items2.each_slice(3) {|num|  num}
+            assert_nil(ff2)
 
-            ff3 = @items3.each_slice(3) {|num| puts num}
-            assert_equal(nil, ff3)
+            ff3 = @items3.each_slice(3) {|num|  num}
+            assert_nil(ff3)
 
 
             #test entries
@@ -133,7 +133,7 @@ require "minitest/autorun"
             assert_equal("1", g2)
 
             g3 = @items3.find {|num| num}
-            assert_equal(nil, g3)
+            assert_nil(g3)
 
 
             #test find_all
