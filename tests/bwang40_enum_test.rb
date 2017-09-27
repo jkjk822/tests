@@ -1,17 +1,5 @@
-load 'Triple.rb'
 # require 'test-unit'
 require 'minitest/autorun'
-
-class Triple
-  include Enumerable
-  def initialize(a,b,c)
-    @a = a
-    @b = b
-    @c = c
-    @array=[a,b,c]
-  end
-
-
 
 #do not necessary!!!
   # def getter
@@ -29,11 +17,8 @@ class Triple
 
 
 
-end
 
-
-
-class Testany < Minitest::Unit::TestCase
+class Testany < Minitest::Test
 
 
 
@@ -124,10 +109,10 @@ end
 
 def test_detectblock?
   assert_equal 1, Triple.new(1,2,3).detect{|x| x.is_a?(Integer)}
-  assert_equal nil, Triple.new('s', 'd' ,'f' ).detect{|x| x.is_a?(Integer)}
-  assert_equal nil, Triple.new(nil, nil , nil ).detect{|x| x.is_a?(Integer)}
+  assert_nil Triple.new('s', 'd' ,'f' ).detect{|x| x.is_a?(Integer)}
+  assert_nil Triple.new(nil, nil , nil ).detect{|x| x.is_a?(Integer)}
   assert_equal 1, Triple.new(1, nil, 3).detect{|x| x.is_a?(Integer)}
-  assert_equal nil, Triple.new( 's', nil, 'f').detect{|x| x.is_a?(Integer)}
+  assert_nil Triple.new( 's', nil, 'f').detect{|x| x.is_a?(Integer)}
   assert_equal 1, Triple.new( 1, nil, 'd').detect{|x| x.is_a?(Integer)}
   assert_equal 1, Triple.new(1, 2, 'g').detect{|x| x.is_a?(Integer)}
 
