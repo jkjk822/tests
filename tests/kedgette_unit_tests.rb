@@ -1174,7 +1174,7 @@ class KedgetteUnitTests < Minitest::Test
       a+b>4
     end
 
-    assert_equal [[1],[2,3]], result
+    assert_equal [[1,2],[3]], result
   end
 
   def test_slice_when_strings
