@@ -1,9 +1,9 @@
 
 #require_relative "samrose_enum_class"
 #require_relative "samrose_enum_class_none"
-require "test/unit"
+require "minitest/autorun"
 
-class Tester < Test::Unit::TestCase
+class Tester < Minitest::Test
 	def test_all
 		items = Triple.new(1, 2, 3) 
 		assert_equal(true, items.all?)
@@ -18,7 +18,7 @@ class Tester < Test::Unit::TestCase
 		assert_equal(false, items.all?{|x| x.length > 3})
 	end
 	def test_all_none
-		items = Triple2.new() 
+		items = Triple.new() 
 		#assert_equal(true, items.all?)
 	end
 	def test_any
@@ -35,7 +35,7 @@ class Tester < Test::Unit::TestCase
 		assert_equal(true, items.any?{|x| x.length > 3})
 	end
 	def test_any_none
-		items = Triple2.new() 
+		items = Triple.new() 
 		#assert_equal(false, items.any?)
 	end
 	def test_chunk
@@ -43,7 +43,7 @@ class Tester < Test::Unit::TestCase
 		assert_equal([[false,[1]], [true, [2,3]]], items.chunk{|x| x>1}.to_a)
 	end
 	def test_chunk_none
-		items = Triple2.new() 
+		items = Triple.new() 
 		#assert_equal([], items.chunk{|x| x>1}.to_a)
 	end
 	def test_chunk_while
@@ -51,7 +51,7 @@ class Tester < Test::Unit::TestCase
 		assert_equal([[1, 2, 3]], items.chunk_while{|x, y| x+1 == y}.to_a)
 	end
 	def test_chunk_while_none
-		items = Triple2.new() 
+		items = Triple.new() 
 		#assert_equal([], items.chunk_while{|x, y| x+1 == y}.to_a)
 	end
 	def test_collect
@@ -79,7 +79,7 @@ class Tester < Test::Unit::TestCase
 		assert_equal(1, items.count{|x| x.even?})
 	end
 	def test_count_none
-		items = Triple2.new() 
+		items = Triple.new() 
 		#assert_equal(0, items.count)
 	end
 	def test_cycle
@@ -87,7 +87,7 @@ class Tester < Test::Unit::TestCase
 		assert_equal([1, 2, 3, 1, 2, 3], items.cycle(2).to_a)
 	end
 	def test_cycle_none
-		items = Triple2.new() 
+		items = Triple.new() 
 		#assert_equal([], items.cycle(2).to_a)
 	end
 	def test_cycle_block
@@ -132,7 +132,7 @@ class Tester < Test::Unit::TestCase
 		assert_equal([[1,2],[3]], items.each_slice(2).to_a)
 	end
 	def test_each_slice_n_block_none
-		items = Triple2.new() 
+		items = Triple.new() 
 		#assert_equal(nil, items.each_slice(2){})
 	end
 	def test_each_with_index_block
@@ -184,7 +184,7 @@ class Tester < Test::Unit::TestCase
 		assert_equal(1, items.first)
 	end
 	def test_first_none
-		items = Triple2.new() 
+		items = Triple.new() 
 		#assert_equal(nil, items.first)
 	end
 	def test_first_n
@@ -196,7 +196,7 @@ class Tester < Test::Unit::TestCase
 		assert_equal([2,4,6], items.flat_map{|x| x*2})
 	end
 	def test_flat_map_none
-		items = Triple2.new() 
+		items = Triple.new() 
 		#assert_equal([], items.flat_map{|x| x*2})
 	end
 	def test_grep
@@ -277,7 +277,7 @@ class Tester < Test::Unit::TestCase
 		assert_equal(["hello", "ciao"], items.max_by(2){|x| x.length})
 	end
 	def test_max_none
-		items = Triple2.new() 
+		items = Triple.new() 
 		#assert_equal(nil, items.max)
 	end
 	def test_member
@@ -310,7 +310,7 @@ class Tester < Test::Unit::TestCase
 		assert_equal(["hi", "ciao"], items.min_by(2){|x| x.length})
 	end
 	def test_min_none
-		items = Triple2.new() 
+		items = Triple.new() 
 		#assert_equal(nil, items.min)
 	end
 	def test_minmax
@@ -331,7 +331,7 @@ class Tester < Test::Unit::TestCase
 		assert_equal(false, items.none?{|x| x>2})
 	end
 	def test_none_none
-		items = Triple2.new() 
+		items = Triple.new() 
 		#assert_equal(true, items.none?{|x| x>5})
 	end
 	def test_one
@@ -349,10 +349,10 @@ class Tester < Test::Unit::TestCase
 		assert_equal(6, items.reduce(0){|y, x| y + x})
 		assert_equal(6, items.reduce{|y, x| y + x})
 	end
-	def test_reduce_none
-		items = Triple2.new() 
-		assert_equal(10, items.reduce(10){|y, x| y + x}) 
-	end
+	# def test_reduce_none
+	# 	items = Triple.new() 
+	# 	assert_equal(10, items.reduce(10){|y, x| y + x}) 
+	# end
 	def test_reduceParameter_opAdd
 		items = Triple.new(1, 2, 3) 
 		assert_equal(6, items.reduce(0, :+))
@@ -411,7 +411,7 @@ class Tester < Test::Unit::TestCase
 		assert_equal([3,2,1], items.sort{|y, x| x <=> y})
 	end
 	def test_sort_none
-		items = Triple2.new() 
+		items = Triple.new() 
 		#assert_equal([], items.sort)
 	end
 	def test_sort_by
@@ -423,7 +423,7 @@ class Tester < Test::Unit::TestCase
 		assert_equal(["hi","ciao","hello"], items.sort_by{|x| x.length})
 	end
 	def test_sort_by_block_none
-		items = Triple2.new() 
+		items = Triple.new() 
 		#assert_equal([], items.sort_by{|x| x.length})
 	end
 	def test_sum
@@ -435,7 +435,7 @@ class Tester < Test::Unit::TestCase
 		assert_equal(12, items.sum{|x| x*2})
 	end
 	def test_sum_none
-		items = Triple2.new()
+		items = Triple.new()
 		#assert_equal(0, items.sum{|x| x*2})
 	end
 	def test_take_n
@@ -447,7 +447,7 @@ class Tester < Test::Unit::TestCase
 		assert_equal([1,2,3], items.take(5))
 	end
 	def test_take_none
-		items = Triple2.new()
+		items = Triple.new()
 		#assert_equal([], items.take(5))
 	end
 	def test_take_while_block
@@ -459,7 +459,7 @@ class Tester < Test::Unit::TestCase
 		assert_equal([1,2,3], items.to_a)
 	end
 	def test_to_a_none
-		items = Triple2.new()
+		items = Triple.new()
 		#assert_equal([], items.to_a)
 	end
 	def test_to_h
@@ -467,7 +467,7 @@ class Tester < Test::Unit::TestCase
 		assert_equal({1=>0, 2=>1, 3=>2}, items.each_with_index.to_h)
 	end
 	def test_to_h_none
-		items = Triple2.new()
+		items = Triple.new()
 		#assert_equal({}, items.to_h)
 	end
 	def test_uniq
@@ -481,7 +481,7 @@ class Tester < Test::Unit::TestCase
 		assert_equal([1], items.uniq{|x|})
 	end
 	def test_uniq_none
-		items = Triple2.new()
+		items = Triple.new()
 		#assert_equal([], items.uniq)
 	end
 	def test_zip
@@ -496,8 +496,8 @@ class Tester < Test::Unit::TestCase
 		assert_equal([[1,3,5],[2,4,6],[3,5,7]], items1.zip(items2, items3))
 	end
 	def test_zip_none
-		items1 = Triple2.new()
-		items2 = Triple2.new()
+		items1 = Triple.new()
+		items2 = Triple.new()
 		#assert_equal([], items1.zip(items2))
 	end
 	def test_zip_nil
