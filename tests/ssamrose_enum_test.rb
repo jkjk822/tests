@@ -100,7 +100,7 @@ class Tester < Minitest::Test
 	end
 	def test_detect_none
 		items = Triple.new(1, 2, 3) 
-		assert_equal(nil, items.detect{|x| x<1})
+		assert_nil(items.detect{|x| x<1})
 	end
 	def test_drop_n
 		items = Triple.new(1, 2, 3) 
@@ -133,7 +133,7 @@ class Tester < Minitest::Test
 	end
 	def test_each_slice_n_block_none
 		items = Triple.new() 
-		#assert_equal(nil, items.each_slice(2){})
+		#assert_nil(items.each_slice(2){})
 	end
 	def test_each_with_index_block
 		items = Triple.new(1, 2, 3) 
@@ -157,7 +157,7 @@ class Tester < Minitest::Test
 	end
 	def test_find_none
 		items = Triple.new(1, 2, 3) 
-		assert_equal(nil, items.find{|x| x == 6})
+		assert_nil(items.find{|x| x == 6})
 	end
 	def test_findAll_greaterthan2
 		items = Triple.new(1, 2, 3) 
@@ -165,7 +165,7 @@ class Tester < Minitest::Test
 	end
 	def test_findAll_none
 		items = Triple.new(1, 2, 3) 
-		assert_equal(nil, items.find{|x| x > 4})
+		assert_nil(items.find{|x| x > 4})
 	end
 	def test_find_index
 		items = Triple.new(1, 2, 3) 
@@ -177,7 +177,7 @@ class Tester < Minitest::Test
 	end
 	def test_find_index_none
 		items = Triple.new(1, 2, 3) 
-		assert_equal(nil, items.find_index(5))
+		assert_nil(items.find_index(5))
 	end
 	def test_first
 		items = Triple.new(1, 2, 3) 
@@ -185,7 +185,7 @@ class Tester < Minitest::Test
 	end
 	def test_first_none
 		items = Triple.new() 
-		#assert_equal(nil, items.first)
+		#assert_nil(items.first)
 	end
 	def test_first_n
 		items = Triple.new(1, 2, 3) 
@@ -278,7 +278,7 @@ class Tester < Minitest::Test
 	end
 	def test_max_none
 		items = Triple.new() 
-		#assert_equal(nil, items.max)
+		#assert_nil(items.max)
 	end
 	def test_member
 		items = Triple.new(1, 2, 3) 
@@ -311,7 +311,7 @@ class Tester < Minitest::Test
 	end
 	def test_min_none
 		items = Triple.new() 
-		#assert_equal(nil, items.min)
+		#assert_nil(items.min)
 	end
 	def test_minmax
 		items = Triple.new(1, 2, 3) 
@@ -503,6 +503,6 @@ class Tester < Minitest::Test
 	def test_zip_nil
 		items1 = Triple.new(1, 2, 3)
 		items2 = Triple.new(3, 4, 5)
-		assert_equal(nil, items1.zip(items2){|y, x| y > x})
+		assert_nil(items1.zip(items2){|y, x| y > x})
 	end
 end
