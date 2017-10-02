@@ -182,10 +182,10 @@ class TestTriple < Minitest::Test
     assert_equal @triple1.inject{|sum,n|sum+n}, 6
   end
 
-  def test_lazy
-    #???
-    assert_equal @triple1.lazy.to_a,[1,2,3]
-  end
+  # def test_lazy
+  #   #???
+  #   assert_equal @triple1.lazy.to_a,[1,2,3]
+  # end
 
   def test_map
     assert_equal @triple1.map{|i|i*2},[2,4,6]
