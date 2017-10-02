@@ -338,10 +338,10 @@ def test_inject
   assert_equal Triple.new(1,2,3).inject{|sum,n|sum+n},6
 end
 
-def test_lazy
+# def test_lazy
 
-  assert_equal Triple.new(1,2,3).lazy.to_a,[1,2,3]
-end
+#   assert_equal Triple.new(1,2,3).lazy.to_a,[1,2,3]
+# end
 
 def test_map
   assert_equal Triple.new(1,2,3).map{|x|x*2},[2,4,6]
